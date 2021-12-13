@@ -32,7 +32,7 @@ func run() error {
 		return fmt.Errorf("error creating credentials: %w", err)
 	}
 
-	auth, err := a.NewAzureIdentityAuthenticationProviderWithScopes(cred, []string{"https://graph.microsoft.com"})
+	auth, err := a.NewAzureIdentityAuthenticationProvider(cred)
 	if err != nil {
 		return fmt.Errorf("error authentication provider: %w", err)
 	}
